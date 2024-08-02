@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<form action="/" method="POST">
+  {% for prompt in prompts %}
+  <label for="{{ prompt }}">{{ prompt.capitalize() }}:</label>
+  <input type="text" id="{{ prompt }}" name="{{ prompt }}" required/><br>
+  {% endfor %}
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}
